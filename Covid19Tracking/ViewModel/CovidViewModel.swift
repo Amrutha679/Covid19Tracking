@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+class CovidViewModel {
+    
+    var covidService = CovidService()
+    
+    func getCovidInfo(country:String, completion: @escaping (CovidData?) -> ()) {
+        
+        covidService.fetchCovidData(country: country) { CovidData in
+            if CovidData != nil {
+                completion(CovidData)
+            } else {
+                completion(nil)
+            }
+        }
+    }
+}

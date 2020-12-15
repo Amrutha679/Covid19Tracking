@@ -14,8 +14,9 @@
 		F04FE6C325889494006E7BF1 /* Covid19Tracking.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F04FE6C125889494006E7BF1 /* Covid19Tracking.xcdatamodeld */; };
 		F04FE6C52588949B006E7BF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F04FE6C42588949B006E7BF1 /* Assets.xcassets */; };
 		F04FE6C82588949B006E7BF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F04FE6C62588949B006E7BF1 /* LaunchScreen.storyboard */; };
-		F04FE6D0258894CE006E7BF1 /* CovidData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04FE6CF258894CE006E7BF1 /* CovidData.swift */; };
 		F04FE6D22588951C006E7BF1 /* CovidService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04FE6D12588951C006E7BF1 /* CovidService.swift */; };
+		F04FE6D825889A65006E7BF1 /* CovidData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04FE6D725889A65006E7BF1 /* CovidData.swift */; };
+		F04FE6DB25889AEC006E7BF1 /* CovidViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04FE6DA25889AEC006E7BF1 /* CovidViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +29,9 @@
 		F04FE6C42588949B006E7BF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F04FE6C72588949B006E7BF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F04FE6C92588949B006E7BF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F04FE6CF258894CE006E7BF1 /* CovidData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidData.swift; sourceTree = SOURCE_ROOT; };
 		F04FE6D12588951C006E7BF1 /* CovidService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidService.swift; sourceTree = "<group>"; };
+		F04FE6D725889A65006E7BF1 /* CovidData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidData.swift; sourceTree = SOURCE_ROOT; };
+		F04FE6DA25889AEC006E7BF1 /* CovidViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +64,11 @@
 		F04FE6B725889494006E7BF1 /* Covid19Tracking */ = {
 			isa = PBXGroup;
 			children = (
-				F04FE6CF258894CE006E7BF1 /* CovidData.swift */,
-				F04FE6D12588951C006E7BF1 /* CovidService.swift */,
 				F04FE6B825889494006E7BF1 /* AppDelegate.swift */,
 				F04FE6BA25889494006E7BF1 /* SceneDelegate.swift */,
+				F04FE6D925889A98006E7BF1 /* ViewModel */,
+				F04FE6D5258898F1006E7BF1 /* APIService */,
+				F04FE6D62588990C006E7BF1 /* Model */,
 				F04FE6BC25889494006E7BF1 /* ViewController.swift */,
 				F04FE6BE25889494006E7BF1 /* Main.storyboard */,
 				F04FE6C42588949B006E7BF1 /* Assets.xcassets */,
@@ -74,6 +77,30 @@
 				F04FE6C125889494006E7BF1 /* Covid19Tracking.xcdatamodeld */,
 			);
 			path = Covid19Tracking;
+			sourceTree = "<group>";
+		};
+		F04FE6D5258898F1006E7BF1 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				F04FE6D12588951C006E7BF1 /* CovidService.swift */,
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
+		F04FE6D62588990C006E7BF1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F04FE6D725889A65006E7BF1 /* CovidData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F04FE6D925889A98006E7BF1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F04FE6DA25889AEC006E7BF1 /* CovidViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,9 +175,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F04FE6BD25889494006E7BF1 /* ViewController.swift in Sources */,
-				F04FE6D0258894CE006E7BF1 /* CovidData.swift in Sources */,
+				F04FE6DB25889AEC006E7BF1 /* CovidViewModel.swift in Sources */,
 				F04FE6B925889494006E7BF1 /* AppDelegate.swift in Sources */,
 				F04FE6D22588951C006E7BF1 /* CovidService.swift in Sources */,
+				F04FE6D825889A65006E7BF1 /* CovidData.swift in Sources */,
 				F04FE6C325889494006E7BF1 /* Covid19Tracking.xcdatamodeld in Sources */,
 				F04FE6BB25889494006E7BF1 /* SceneDelegate.swift in Sources */,
 			);

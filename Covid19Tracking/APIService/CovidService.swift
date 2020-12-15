@@ -10,7 +10,7 @@ import Foundation
 
 class CovidService {
     
-    func getCovidInfo(country:String,completion: @escaping (CovidData?) -> () ) {
+    func fetchCovidData(country:String,completion: @escaping (CovidData?) -> () ) {
         
         guard let url = URL(string: "https://corona.lmao.ninja/v3/covid-19/countries\(country)") else {
             completion(nil)
