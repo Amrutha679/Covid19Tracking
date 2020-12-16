@@ -8,13 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CovidViewController: UIViewController {
 
     @IBOutlet weak var countryName: UITextField!
+    @IBOutlet weak var totalCases: UILabel!
     @IBOutlet weak var activeCases: UILabel!
+    @IBOutlet weak var recoveredCases: UILabel!
     
-    var covidViewModel = CovidViewModel()
-    var country:String = ""
+   private var covidViewModel = CovidViewModel()
     
     override func viewDidLoad() {
         
@@ -23,26 +24,21 @@ class ViewController: UIViewController {
         countryName.autocapitalizationType = .words
         countryName.autocorrectionType = .no
         countryName.delegate = self
-        //country = self.countryName.text ?? ""
-        
     }
     
     @IBAction func buttonTapped(_ sender: UIButton) {
         
-        country = countryName.text ?? ""
-        print(" country is \(countryName.text)")
-        
-        covidViewModel.getCovidInfo(country: country){ CovidData in
+      let country = countryName.text ?? ""
+        covidViewModel.getCovidInfo(country){ [weak self] CovidData in
             if CovidData != nil {
                 DispatchQueue.main.async {
-                    self.activeCases.text = "\(String(describing: CovidData?.active))"
-                    print(CovidData?.active)
+                    self?.totalCases.text = "\(String(describing: CovidData?.active ?? 0))"
                 }
             }
         }
     }
 }
-extension ViewController: UITextFieldDelegate {
+extension CovidViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

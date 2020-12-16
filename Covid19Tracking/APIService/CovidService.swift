@@ -10,20 +10,21 @@ import Foundation
 
 class CovidService {
     
-    func fetchCovidData(country:String,completion: @escaping (CovidData?) -> () ) {
+     func fetchCovidData(_ country:String,completion: @escaping (CovidData?) -> () ) {
         
-        guard let url = URL(string: "https://corona.lmao.ninja/v3/covid-19/countries\(country)") else {
+        guard let url = URL(string: "https://corona.lmao.ninja/v3/covid-19/countries/\(country)") else {
             completion(nil)
             return
         }
         URLSession.shared.dataTask(with: url){ data,response,error in
-            guard let data = data,error == nil else{
+            guard let data = data,error == nil else {
                 completion(nil)
                 return
             }
             let responseData = try? JSONDecoder().decode(CovidData.self, from: data)
-            if let covidData = responseData {
-                completion(covidData)
+            if let covidResponse = responseData {
+                completion(covidResponse)
+                print(covidResponse)
             } else {
                 completion(nil)
             }

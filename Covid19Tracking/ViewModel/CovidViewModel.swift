@@ -10,13 +10,13 @@ import Foundation
 
 class CovidViewModel {
     
-    var covidService = CovidService()
+    private var covidService = CovidService()
     
-    func getCovidInfo(country:String, completion: @escaping (CovidData?) -> ()) {
+    func getCovidInfo(_ country:String, completion: @escaping (CovidData?) -> ()) {
         
-        covidService.fetchCovidData(country: country) { CovidData in
-            if CovidData != nil {
-                completion(CovidData)
+        covidService.fetchCovidData(country) { covidData in
+            if covidData != nil {
+                completion(covidData)
             } else {
                 completion(nil)
             }
